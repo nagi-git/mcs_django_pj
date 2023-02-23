@@ -1,0 +1,19 @@
+django-admin startproject django_app
+python manage.py startapp one_one_app
+
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+python manage.py runserver
+
+python manage.py showmigrations
+マイグレーションの一覧を表示（アプリ・名前順）
+
+python manage.py showmigrations --plan
+マイグレーションの適用計画順（後述）に表示
+
+python manage.py sqlmigrate マイグレーションID
+対象のマイグレーションID適用時のSQLを表示
+
+0001_internalを実行したところまで戻します。
+python manage.py migrate appname 0001_initial
